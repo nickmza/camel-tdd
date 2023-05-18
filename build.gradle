@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.0.6'
+    id 'io.spring.dependency-management' version '1.1.0'
+}
+
+group = 'net.nickmck'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.apache.camel.springboot:camel-spring-boot-starter:4.0.0-M1'
+
+    implementation 'org.apache.camel:camel-test-spring-junit5:4.0.0-M1'
+
+    implementation 'org.apache.camel.springboot:camel-http-starter:4.0.0-M1'
+
+    implementation 'org.apache.camel:camel-jackson:4.0.0-M1'
+    implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.14.2'
+    implementation 'org.apache.camel.springboot:camel-jacksonxml-starter:4.0.0-M1'
+
+    implementation 'org.springframework.boot:spring-boot-starter-actuator:3.0.4'
+    implementation 'org.jolokia:jolokia-core:1.7.2'
+    implementation 'org.springframework.boot:spring-boot-starter-web:3.0.4'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
